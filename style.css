@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Winky Sans", sans-serif;
     margin: 0;
@@ -17,7 +23,7 @@ header {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px; /* Боковые отступы для ПК */
+    padding: 0 20px;
 }
 
 .hero {
@@ -63,9 +69,10 @@ header {
     border: 2px solid #5D5C61;
     border-radius: 15px;
     padding: 20px;
-    width: calc(25% - 20px); /* Четыре колонки на ПК */
+    flex: 1 1 calc(25% - 40px); /* Четыре колонки на ПК */
     background-color: #B1A296;
     margin: 10px;
+    max-width: calc(25% - 40px);
 }
 
 .feature img {
@@ -86,7 +93,8 @@ footer {
 /* Адаптация под планшеты */
 @media (max-width: 1024px) {
     .feature {
-        width: calc(50% - 20px); /* Две колонки на планшетах */
+        flex: 1 1 calc(50% - 40px); /* Две колонки на планшетах */
+        max-width: calc(50% - 40px);
     }
 }
 
@@ -98,7 +106,8 @@ footer {
     }
 
     .feature {
-        width: 100%; /* Одна колонка на мобильных устройствах */
+        flex: 1 1 100%; /* Одна колонка на мобильных устройствах */
+        max-width: 100%;
     }
 
     .hero h1 {
