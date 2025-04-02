@@ -51,12 +51,10 @@ header {
 
 .features {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Вертикальный порядок колонок */
     gap: 20px;
     padding: 20px;
     background-color: #56534c;
-    overflow-x: auto; /* Прокрутка по горизонтали */
-    white-space: nowrap; /* Элементы не переносятся */
 }
 
 .feature {
@@ -64,10 +62,9 @@ header {
     border: 2px solid #5D5C61;
     border-radius: 15px;
     padding: 20px;
-    min-width: 250px; /* Минимальная ширина колонки */
+    width: 100%; /* Колонка занимает всю ширину */
     background-color: #B1A296;
-    margin: 10px;
-    flex-shrink: 0; /* Колонки не сжимаются */
+    margin: 10px 0;
 }
 
 .feature img {
