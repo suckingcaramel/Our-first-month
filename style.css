@@ -1,124 +1,119 @@
+/* Общие стили для всех элементов */
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
+/* Сброс отступов у body */
 body {
-    font-family: "Winky Sans", sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: white;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: "Winky Sans", sans-serif;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #5D5C61;
-    color: white;
-}
-
+/* Контейнер с максимальной шириной */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
+/* Заголовок */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #5D5C61;
+  color: white;
+}
+
+/* Герой-секция (заглавная картинка и текст) */
 .hero {
-    text-align: center;
-    padding: 5vw;
-    background-color: #938e94;
-    border: 3px solid #5D5C61;
-    position: relative;
+  text-align: center;
+  padding: 5vw;
+  background-color: #938e94;
+  border: 3px solid #5D5C61;
+  position: relative;
 }
 
 .hero h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    color: #dbdbdb;
-    font-size: calc(20px + 2vw);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  color: #dbdbdb;
+  font-size: calc(20px + 2vw);
 }
 
 .hero img {
-    width: 100%;
-    height: auto;
-    background-color: #938e94;
-    border-radius: 15px;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  background-color: #938e94;
 }
 
-.feature p {
-    font-family: "Playfair", serif;
-}
-
+/* Секция с картинками */
 .features {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    background-color: #56534c;
+  /* Используем Grid вместо Flex */
+  display: grid;
+  /* На больших экранах 4 колонки */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  background-color: #56534c;
 }
 
 .feature {
-    text-align: center;
-    border: 2px solid #5D5C61;
-    border-radius: 15px;
-    padding: 20px;
-    background-color: #B1A296;
-    margin: 10px;
-    flex: 1 1 calc(25% - 20px); /* Четыре колонки на ПК */
-    min-width: calc(25% - 20px);
-    max-width: calc(25% - 20px);
+  text-align: center;
+  border: 2px solid #5D5C61;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: #B1A296;
 }
 
 .feature img {
-    width: 100%;
-    height: auto;
-    background-color: #938e94;
-    border-radius: 15px;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  background-color: #938e94;
 }
 
+.feature p {
+  font-family: "Playfair", serif;
+}
+
+/* Подвал */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #5D5C61;
-    color: white;
-    font-family: "Dancing Script", cursive;
+  text-align: center;
+  padding: 20px;
+  background-color: #5D5C61;
+  color: white;
+  font-family: "Dancing Script", cursive;
 }
 
-/* Адаптация под планшеты */
+/* Адаптация под планшеты (до 1024px) */
 @media (max-width: 1024px) {
-    .feature {
-        flex: 1 1 calc(50% - 20px); /* Две колонки на планшетах */
-        min-width: calc(50% - 20px);
-        max-width: calc(50% - 20px);
-    }
+  .features {
+    /* Две колонки */
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* Адаптация под мобильные устройства */
+/* Адаптация под мобильные (до 768px) */
 @media (max-width: 768px) {
-    .features {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .feature {
-        flex: 1 1 100%; /* Одна колонка на мобильных устройствах */
-        min-width: 100%;
-        max-width: 100%;
-    }
-
-    .hero h1 {
-        font-size: calc(16px + 2vw);
-    }
-
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
+  .features {
+    /* Одна колонка */
+    grid-template-columns: 1fr;
+  }
+  .hero h1 {
+    font-size: calc(16px + 2vw);
+  }
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
 }
