@@ -69,10 +69,11 @@ header {
     border: 2px solid #5D5C61;
     border-radius: 15px;
     padding: 20px;
-    flex: 1 1 calc(25% - 40px); /* Четыре колонки на ПК */
     background-color: #B1A296;
     margin: 10px;
-    max-width: calc(25% - 40px);
+    flex: 1 1 calc(25% - 20px); /* Четыре колонки на ПК */
+    min-width: calc(25% - 20px);
+    max-width: calc(25% - 20px);
 }
 
 .feature img {
@@ -93,8 +94,9 @@ footer {
 /* Адаптация под планшеты */
 @media (max-width: 1024px) {
     .feature {
-        flex: 1 1 calc(50% - 40px); /* Две колонки на планшетах */
-        max-width: calc(50% - 40px);
+        flex: 1 1 calc(50% - 20px); /* Две колонки на планшетах */
+        min-width: calc(50% - 20px);
+        max-width: calc(50% - 20px);
     }
 }
 
@@ -107,6 +109,7 @@ footer {
 
     .feature {
         flex: 1 1 100%; /* Одна колонка на мобильных устройствах */
+        min-width: 100%;
         max-width: 100%;
     }
 
