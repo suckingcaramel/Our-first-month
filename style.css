@@ -55,7 +55,6 @@ header {
     gap: 20px;
     padding: 20px;
     background-color: #56534c;
-    overflow-x: auto; /* Прокрутка по горизонтали */
     white-space: nowrap; /* Элементы не переносятся */
 }
 
