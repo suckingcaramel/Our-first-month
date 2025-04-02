@@ -14,6 +14,12 @@ header {
     color: white;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 .hero {
     text-align: center;
     padding: 5vw;
@@ -45,11 +51,12 @@ header {
 
 .features {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     padding: 20px;
     background-color: #56534c;
+    overflow-x: auto; /* Прокрутка по горизонтали */
+    white-space: nowrap; /* Элементы не переносятся */
 }
 
 .feature {
@@ -57,9 +64,10 @@ header {
     border: 2px solid #5D5C61;
     border-radius: 15px;
     padding: 20px;
-    width: calc(50% - 40px); /* Две колонки на небольших экранах */
+    min-width: 250px; /* Минимальная ширина колонки */
     background-color: #B1A296;
     margin: 10px;
+    flex-shrink: 0; /* Колонки не сжимаются */
 }
 
 .feature img {
@@ -75,20 +83,4 @@ footer {
     background-color: #5D5C61;
     color: white;
     font-family: "Dancing Script", cursive;
-}
-
-/* Адаптация под маленькие экраны */
-@media (max-width: 768px) {
-    .feature {
-        width: 100%; /* Одна колонка на мобильных устройствах */
-    }
-
-    .hero h1 {
-        font-size: calc(16px + 2vw);
-    }
-
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
 }
