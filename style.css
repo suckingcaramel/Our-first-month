@@ -14,6 +14,12 @@ header {
     color: white;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Боковые отступы для ПК */
+}
+
 .hero {
     text-align: center;
     padding: 5vw;
@@ -57,7 +63,7 @@ header {
     border: 2px solid #5D5C61;
     border-radius: 15px;
     padding: 20px;
-    width: calc(50% - 40px); /* Две колонки на небольших экранах */
+    width: calc(25% - 20px); /* Четыре колонки на ПК */
     background-color: #B1A296;
     margin: 10px;
 }
@@ -77,8 +83,20 @@ footer {
     font-family: "Dancing Script", cursive;
 }
 
-/* Адаптация под маленькие экраны */
+/* Адаптация под планшеты */
+@media (max-width: 1024px) {
+    .feature {
+        width: calc(50% - 20px); /* Две колонки на планшетах */
+    }
+}
+
+/* Адаптация под мобильные устройства */
 @media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .feature {
         width: 100%; /* Одна колонка на мобильных устройствах */
     }
